@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
- * Created by giorgiodelzanno on 09/03/19.
+ * Created by NotMyUid,RobbGar and Iwazaruscof on 05/03/20.
  */
 
 public class AndroidClient {
