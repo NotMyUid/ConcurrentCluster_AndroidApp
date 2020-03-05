@@ -14,13 +14,12 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE_ID = "msg1";
-    public static final String EXTRA_MESSAGE_IP = "msg2";
+    public static final String EXTRA_MESSAGE_IP = "msg";
     private String IPstring ;
 
     private boolean checkIp(){ // controlla se è stato inserito un indirizzo ip
         if ( IPstring == null ){
-            Toast.makeText(this, "Indirizzo IP mancante", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "MISSING IP ADRESS", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -30,22 +29,23 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
     }
 
-    public void doSignIn(View view) { // avvia activity per la registrazione
+    /*public void doSignIn() {
         if (!checkIp()) return;
-        Intent intent = new Intent(this, SigninActivity.class);
-        intent.putExtra("msg2", IPstring);
+        Intent intent = new Intent(this, SignInActivity.class);
+        intent.putExtra("msg", IPstring);
         startActivity(intent);
-    }
+    }*/
 
-    public void doLogIn(View view) { // effettuta il login e se va a buon fine avvia la loginActivity
+    public void insertData(View view) { // effettuta il login e se va a buon fine avvia la loginActivity
         if (!checkIp()) return;
-        EditText idText = (EditText) findViewById(R.id.loginText);
-        String id = idText.getText().toString();
+        EditText positionText = (EditText) findViewById(R.id.positionText);
+        EditText searchText = (EditText) findViewById(R.id.searchText);
+        String position = positionText.getText().toString();
+        String search = searchText.getText().toString();
         AndroidClient client = new AndroidClient(IPstring , 5005);
-        ConnectionWorker worker = new ConnectionWorker(this,client,"logIn",id,null,null);
+        ConnectionWorker worker = new ConnectionWorker(this,client,"search",position,search);
         worker.execute();
     }
 
