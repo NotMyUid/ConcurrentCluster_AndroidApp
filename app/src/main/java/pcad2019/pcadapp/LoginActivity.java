@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private String IPstring ;
 
-    private boolean checkIp(){
+    private boolean checkIp(){ // controlla se è stato inserito un indirizzo ip
         if ( IPstring == null ){
             Toast.makeText(this, "MISSING IP ADRESS", Toast.LENGTH_SHORT).show();
             return false;

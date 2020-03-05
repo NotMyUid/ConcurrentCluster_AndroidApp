@@ -10,7 +10,6 @@
     tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/pcadapp"
@@ -21,7 +20,6 @@
         android:visibility="visible" />
 
     <ImageView
-        android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="@android:dimen/thumbnail_height"
         android:background="@android:color/transparent"
@@ -39,7 +37,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <Button
-        android:id="@+id/IpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="insertIp"
@@ -62,7 +59,6 @@
         android:autofillHints="" />
 
     <Button
-        android:id="@+id/searchButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/searchButton"
