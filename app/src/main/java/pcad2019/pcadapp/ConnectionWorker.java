@@ -34,8 +34,8 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
         switch (command) {
             case "search":
                 return client.send(position,search);
-            //case "mostFrequents":
-                //return client.mostFrequents(position);
+            case "showFrequents":
+                return client.showFrequents(position);
             default:
                 throw new AssertionError();
         }
@@ -50,21 +50,19 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
                     String url = "http://www.google.com/#q="+search;
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                     activity.startActivity(browserIntent);
-                    //activity.finish();
                 }
                 else {
                     Toast.makeText(activity, "MM.. Something went wrong :|", Toast.LENGTH_SHORT).show();
                 }
                 break;
             }
-            /*case "mostFrequents": {
+            case "showFrequents": {
                 if (result) {
-                    Toast.makeText(activity, "Utente cancellato", Toast.LENGTH_SHORT).show();
-                    activity.finish();
+                    Toast.makeText(activity, "Echoing..", Toast.LENGTH_SHORT).show();
                 }
-                else { Toast.makeText(activity, "Impossibile cancellare utente", Toast.LENGTH_SHORT).show();}
+                else { Toast.makeText(activity, "MM.. Something went wrong :|", Toast.LENGTH_SHORT).show();}
                 break;
-            }*/
+            }
         }
     }
 }

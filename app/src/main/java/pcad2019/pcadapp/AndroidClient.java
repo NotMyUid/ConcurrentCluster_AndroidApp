@@ -30,8 +30,37 @@ public class AndroidClient {
         try {
             serverSocket = new Socket(ip, port);
             output =  new PrintWriter(serverSocket.getOutputStream(), true);
-            output.println(position);
+            output.println("search\n"+position);
             output.println(search);
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+            return false;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }  finally {
+            try {
+                if(serverSocket != null) serverSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch(Exception ee) {
+                ee.printStackTrace();
+            }
+        }
+        return true;
+    }
+
+    public boolean showFrequents(String position) {
+        Socket serverSocket = null;
+        PrintWriter output = null;
+        if (position.isEmpty()) return false;
+        try {
+            serverSocket = new Socket(ip, port);
+            output =  new PrintWriter(serverSocket.getOutputStream(), true);
+            output.println("showFrequents\n"+position);
         } catch (UnknownHostException e) {
             e.printStackTrace();
             return false;

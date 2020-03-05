@@ -7,5 +7,6 @@
     <string name="pcadapp">ConcurrentCluster</string>
     <string name="title_activity_login">[CC]ConcurrentCluster</string>
     <string name="searchButton">SEARCH!</string>
+    <string name="showFrequentsButton">SHOW FREQUENT WORDS</string>
     <string name="image">Logo</string>
 </resources>

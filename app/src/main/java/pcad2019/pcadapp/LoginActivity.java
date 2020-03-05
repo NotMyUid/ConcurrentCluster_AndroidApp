@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
 
-    public void insertData(View view) { // effettuta il login e se va a buon fine avvia la loginActivity
+    public void insertDataSend(View view) { // effettuta il login e se va a buon fine avvia la loginActivity
         if (!checkIp()) return;
         EditText positionText = (EditText) findViewById(R.id.positionText);
         EditText searchText = (EditText) findViewById(R.id.searchText);
@@ -38,6 +38,15 @@ public class LoginActivity extends AppCompatActivity {
         String search = searchText.getText().toString();
         AndroidClient client = new AndroidClient(IPstring , 5005);
         ConnectionWorker worker = new ConnectionWorker(this,client,"search",position,search);
+        worker.execute();
+    }
+
+    public void insertDataShow(View view) { // effettuta il login e se va a buon fine avvia la loginActivity
+        if (!checkIp()) return;
+        EditText positionText = (EditText) findViewById(R.id.positionText);
+        String position = positionText.getText().toString();;
+        AndroidClient client = new AndroidClient(IPstring , 5005);
+        ConnectionWorker worker = new ConnectionWorker(this,client,"showFrequents",position,"");
         worker.execute();
     }
 
