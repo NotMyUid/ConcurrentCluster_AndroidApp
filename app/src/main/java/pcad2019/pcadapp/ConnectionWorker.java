@@ -2,8 +2,11 @@ package pcad2019.pcadapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.widget.Toast;
+
+import static android.support.v4.content.ContextCompat.startActivity;
 
 /**
  * Created by NotMyUid on 05/03/20.
@@ -44,6 +47,9 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
             case "search": {
                 if (result) {
                     Toast.makeText(activity, "HERE WE ARE ;-)", Toast.LENGTH_SHORT).show();
+                    String url = "http://www.google.com/#q="+search;
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    activity.startActivity(browserIntent);
                     //activity.finish();
                 }
                 else {
