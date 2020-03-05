@@ -1,5 +1,7 @@
 package pcad2019.pcadapp;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,17 +26,12 @@ public class AndroidClient {
     public boolean send(String position,String search) {
         Socket serverSocket = null;
         PrintWriter output = null;
-        BufferedReader input = null;
+        if (position.isEmpty() || search.isEmpty()) return false;
         try {
             serverSocket = new Socket(ip, port);
             output =  new PrintWriter(serverSocket.getOutputStream(), true);
-            BufferedReader bufferedReader = input = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
             output.println(position);
-            String result = input.readLine();
-            if(result.equals("FAIL")) return false;
             output.println(search);
-            result = input.readLine();
-            if(result.equals("FAIL")) return false;
         } catch (UnknownHostException e) {
             e.printStackTrace();
             return false;

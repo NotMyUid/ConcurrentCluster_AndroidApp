@@ -44,7 +44,7 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
             case "search": {
                 if (result) {
                     Toast.makeText(activity, "HERE WE ARE ;-)", Toast.LENGTH_SHORT).show();
-                    activity.finish();
+                    //activity.finish();
                 }
                 else {
                     Toast.makeText(activity, "MM.. Something went wrong :|", Toast.LENGTH_SHORT).show();
