@@ -14,10 +14,9 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE_IP = "msg";
     private String IPstring ;
 
-    private boolean checkIp(){ // controlla se è stato inserito un indirizzo ip
+    private boolean checkIp(){
         if ( IPstring == null ){
             Toast.makeText(this, "MISSING IP ADRESS", Toast.LENGTH_SHORT).show();
             return false;
@@ -30,13 +29,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
     }
-
-    /*public void doSignIn() {
-        if (!checkIp()) return;
-        Intent intent = new Intent(this, SignInActivity.class);
-        intent.putExtra("msg", IPstring);
-        startActivity(intent);
-    }*/
 
     public void insertData(View view) { // effettuta il login e se va a buon fine avvia la loginActivity
         if (!checkIp()) return;

@@ -33,8 +33,10 @@
         android:id="@+id/IpText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:baselineAligned="false"
         android:hint="@string/indirizzo_ip_server"
+        android:inputType="text"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <Button
@@ -42,8 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="insertIp"
-        android:text="@string/inserisci"
-        />
+        android:text="@string/insert" />
 
     <EditText
         android:id="@+id/positionText"
@@ -51,7 +52,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/position"
         android:inputType="textPersonName"
-         />
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/searchText"
@@ -59,13 +60,6 @@
         android:layout_height="wrap_content"
         android:hint="@string/search"
         android:inputType="textPersonName"
-        />
-
-    <TextView
-        android:id="@+id/textViewR"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/se_non_sei_ancora_registrato"
-         />
+        android:autofillHints="" />
 
 </LinearLayout>
