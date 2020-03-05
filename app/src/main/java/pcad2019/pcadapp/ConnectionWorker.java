@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.support.v4.content.ContextCompat.startActivity;
@@ -59,6 +60,12 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
             case "showFrequents": {
                 if (result) {
                     Toast.makeText(activity, "Echoing..", Toast.LENGTH_SHORT).show();
+                    TextView toEdit=(TextView) activity.findViewById(R.id.echoes);
+                    toEdit.setText(client.result);
+                    TextView toEdit1=(TextView) activity.findViewById(R.id.echoes1);
+                    toEdit1.setText(client.result1);
+                    TextView toEdit2=(TextView) activity.findViewById(R.id.echoes2);
+                    toEdit2.setText(client.result2);
                 }
                 else { Toast.makeText(activity, "MM.. Something went wrong :|", Toast.LENGTH_SHORT).show();}
                 break;

@@ -16,6 +16,7 @@ import java.net.UnknownHostException;
 public class AndroidClient {
     protected String ip;
     private int port;
+    protected String result,result1,result2;
 
     public AndroidClient(String ip, int port ) {
         this.ip = ip;
@@ -56,11 +57,20 @@ public class AndroidClient {
     public boolean showFrequents(String position) {
         Socket serverSocket = null;
         PrintWriter output = null;
+        BufferedReader input = null;
         if (position.isEmpty()) return false;
         try {
             serverSocket = new Socket(ip, port);
             output =  new PrintWriter(serverSocket.getOutputStream(), true);
             output.println("showFrequents\n"+position);
+            input = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
+            String result = input.readLine();
+            this.result=result;
+            result = input.readLine();
+            this.result1=result;
+            result = input.readLine();
+            this.result2=result;
+            if(result.equals("FALSE")&&(result1.equals("FALSE")&&(result2.equals("FALSE")))) return false;
         } catch (UnknownHostException e) {
             e.printStackTrace();
             return false;
