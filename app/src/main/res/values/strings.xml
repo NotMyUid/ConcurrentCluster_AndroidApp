@@ -5,7 +5,7 @@
     <string name="indirizzo_ip_server">IP SERVER</string>
     <string name="insert">Insert</string>
     <string name="pcadapp">ConcurrentCluster</string>
-    <string name="title_activity_login">[CC]ConcurrentCluster</string>
+    <string name="title_activity_main">[CC]ConcurrentCluster</string>
     <string name="searchButton">SEARCH!</string>
     <string name="showFrequentsButton">SHOW FREQUENT WORDS</string>
     <string name="image">Logo</string>

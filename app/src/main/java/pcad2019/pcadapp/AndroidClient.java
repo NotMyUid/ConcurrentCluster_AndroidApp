@@ -14,9 +14,8 @@ import java.net.UnknownHostException;
  */
 
 public class AndroidClient {
-    protected String ip;
+    protected String ip,result,result1,result2;
     private int port;
-    protected String result,result1,result2;
 
     public AndroidClient(String ip, int port ) {
         this.ip = ip;
