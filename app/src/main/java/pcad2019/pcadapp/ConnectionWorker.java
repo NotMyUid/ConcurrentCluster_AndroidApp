@@ -7,8 +7,6 @@ import android.os.AsyncTask;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static android.support.v4.content.ContextCompat.startActivity;
-
 /**
  * Created by NotMyUid on 05/03/20.
  */
@@ -53,21 +51,21 @@ public class ConnectionWorker extends AsyncTask<String,String,Boolean> {
                     activity.startActivity(browserIntent);
                 }
                 else {
-                    Toast.makeText(activity, "MM.. Something went wrong :|", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "MM... Something went wrong :|", Toast.LENGTH_SHORT).show();
                 }
                 break;
             }
             case "showFrequents": {
                 if (result) {
-                    Toast.makeText(activity, "Echoing..", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Echoing...", Toast.LENGTH_SHORT).show();
                     TextView toEdit=(TextView) activity.findViewById(R.id.echoes);
-                    toEdit.setText(client.result);
+                    toEdit.setText(client.firstResult);
                     TextView toEdit1=(TextView) activity.findViewById(R.id.echoes1);
-                    toEdit1.setText(client.result1);
+                    toEdit1.setText(client.secondResult);
                     TextView toEdit2=(TextView) activity.findViewById(R.id.echoes2);
-                    toEdit2.setText(client.result2);
+                    toEdit2.setText(client.thirdResult);
                 }
-                else { Toast.makeText(activity, "MM.. Something went wrong :|", Toast.LENGTH_SHORT).show();}
+                else { Toast.makeText(activity, "MM... Something went wrong :|", Toast.LENGTH_SHORT).show();}
                 break;
             }
         }

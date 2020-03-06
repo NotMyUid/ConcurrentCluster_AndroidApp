@@ -1,7 +1,5 @@
 package pcad2019.pcadapp;
 
-import android.util.Log;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,7 +12,7 @@ import java.net.UnknownHostException;
  */
 
 public class AndroidClient {
-    protected String ip,result,result1,result2;
+    protected String ip, firstResult, secondResult, thirdResult;
     private int port;
 
     public AndroidClient(String ip, int port ) {
@@ -64,12 +62,12 @@ public class AndroidClient {
             output.println("showFrequents\n"+position);
             input = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
             String result = input.readLine();
-            this.result=result;
+            firstResult = result;
             result = input.readLine();
-            this.result1=result;
+            secondResult = result;
             result = input.readLine();
-            this.result2=result;
-            if(result.equals("FALSE")&&(result1.equals("FALSE")&&(result2.equals("FALSE")))) return false;
+            thirdResult = result;
+            if(this.firstResult.equals("FALSE")&&(secondResult.equals("FALSE")&&(thirdResult.equals("FALSE")))) return false;
         } catch (UnknownHostException e) {
             e.printStackTrace();
             return false;
