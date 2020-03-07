@@ -21,7 +21,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="@android:dimen/thumbnail_height"
+        android:layout_height="174dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/image"
         android:src="@drawable/app1" />
@@ -38,7 +38,7 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:onClick="insertIp"
         android:text="@string/insert" />
 
@@ -60,9 +60,16 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/searchButton"
-        android:onClick="insertDataSend"/>
+        android:layout_height="41dp"
+        android:onClick="insertDataSend"
+        android:text="@string/searchButton" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:onClick="locateMe"
+        android:text="@string/locate" />
 
     <Button
         android:id="@+id/button2"

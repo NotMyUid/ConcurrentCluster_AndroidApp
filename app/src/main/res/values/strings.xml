@@ -8,5 +8,6 @@
     <string name="title_activity_main">[CC]ConcurrentCluster</string>
     <string name="searchButton">SEARCH!</string>
     <string name="showFrequentsButton">SHOW FREQUENT WORDS</string>
+    <string name="locate">Locate me</string>
     <string name="image">Logo</string>
 </resources>

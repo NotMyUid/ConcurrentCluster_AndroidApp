@@ -67,7 +67,7 @@ public class AndroidClient {
             secondResult = result;
             result = input.readLine();
             thirdResult = result;
-            if(this.firstResult.equals("FALSE")&&(secondResult.equals("FALSE")&&(thirdResult.equals("FALSE")))) return false;
+            if(firstResult.equals("FALSE")&&(secondResult.equals("FALSE")&&(thirdResult.equals("FALSE")))) return false;
         } catch (UnknownHostException e) {
             e.printStackTrace();
             return false;

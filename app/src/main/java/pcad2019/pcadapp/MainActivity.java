@@ -1,5 +1,7 @@
 package pcad2019.pcadapp;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,6 +26,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void locateMe (View view) {
+        EditText positionText = (EditText) findViewById(R.id.positionText);
+        if (!positionText.getText().toString().isEmpty()) {
+            String url = "https://www.google.it/maps/place/"+positionText.getText().toString();
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            this.startActivity(browserIntent);
+        }
+    }
+
     public void insertDataSend(View view) { // effettuta il login e se va a buon fine avvia la loginActivity
         if (!checkIp()) return;
         EditText positionText = (EditText) findViewById(R.id.positionText);
@@ -38,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     public void insertDataShow(View view) { // effettuta il login e se va a buon fine avvia la loginActivity
         if (!checkIp()) return;
         EditText positionText = (EditText) findViewById(R.id.positionText);
-        String position = positionText.getText().toString();;
+        String position = positionText.getText().toString();
         AndroidClient client = new AndroidClient(IPstring , 5005);
         ConnectionWorker worker = new ConnectionWorker(this,client,"showFrequents",position,"");
         worker.execute();
