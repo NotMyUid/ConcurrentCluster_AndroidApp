@@ -1,8 +1,10 @@
 package pcad2019.pcadapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -24,6 +26,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public void onBackPressed(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(pcad2019.pcadapp.MainActivity.this);
+        builder.setMessage("Are you sure? \nYou gonna be disconnected..")
+                .setPositiveButton("YES",new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int id) {
+                        pcad2019.pcadapp.MainActivity.super.onBackPressed();
+                    }
+                }).setNegativeButton("NO",new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int id) { }
+        });
+        builder.create().show();
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
     }
 
     public void locateMe (View view) {
