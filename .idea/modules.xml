@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ConcurrentCluster_AndroidApp.iml" filepath="$PROJECT_DIR$/ConcurrentCluster_AndroidApp.iml" group="ConcurrentCluster_AndroidApp" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="ConcurrentCluster_AndroidApp/app" />
+      <module fileurl="file://$PROJECT_DIR$/PCADApp.iml" filepath="$PROJECT_DIR$/PCADApp.iml" group="PCADApp" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="PCADApp/app" />
     </modules>
   </component>
 </project>
